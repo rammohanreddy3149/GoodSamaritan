@@ -79,7 +79,7 @@ module.exports = function(Users, async, Message, FriendResult, Group, Issue){
                 const result3 = results[2];
                 const result4 = results[3];
                 //console.log(result4);
-                res.render('groupchat/group', {title: 'YouMeChat - Group', user:req.user, groupName: name, data: result1, chat: result2, groupMsg: result3, groupIssue: result4});
+                res.render('groupchat/group', {title: 'GOOD SAMARITAN - Group', user:req.user, groupName: name, data: result1, chat: result2, groupMsg: result3, groupIssue: result4});
                // res.render('groupchat/group', {title: 'Footballkik - Group', user:req.user, groupName:name, data: result1, chat:result2, groupMsg: result3});
             });
         },

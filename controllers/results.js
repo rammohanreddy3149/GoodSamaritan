@@ -29,7 +29,7 @@ module.exports = function(async, Company, Users) {
                     dataChunk.push(res1.slice(i, i+chunkSize));
                 }
                 
-                res.render('results', {title: 'YouMeChat - Results', user: req.user, chunks: dataChunk});
+                res.render('results', {title: 'GOOD SAMARITAN - Results', user: req.user, chunks: dataChunk});
             })
         },
         
@@ -49,7 +49,7 @@ module.exports = function(async, Company, Users) {
                     dataChunk.push(res1.slice(i, i+chunkSize));
                 }
                 
-                res.render('members', {title: 'YouMeChat - Members', user: req.user, chunks: dataChunk});
+                res.render('members', {title: 'GOOD SAMARITAN - Members', user: req.user, chunks: dataChunk});
             });
         },
 
@@ -70,7 +70,7 @@ module.exports = function(async, Company, Users) {
                         dataChunk.push(res1.slice(i, i+chunkSize));
                     }
                     
-                    res.render('members', {title: 'YouMeChat - Members', user: req.user, chunks: dataChunk});
+                    res.render('members', {title: 'GOOD SAMARITAN - Members', user: req.user, chunks: dataChunk});
                 });
             
             }

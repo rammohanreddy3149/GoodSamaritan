@@ -96,7 +96,7 @@ module.exports = function(async, Company, _, Users, Message, FriendResult){
                 }
                 
                 const classSort = _.sortBy(res2, '_id');
-                res.render('home', {title: 'YouMeChat - Home', user:req.user, chunks: dataChunk, country: classSort, data:res3, chat:res4});// chunks: dataChunk, country: countrySort, data:res3, chat:res4});
+                res.render('home', {title: 'GOOD SAMARITAN - Home', user:req.user, chunks: dataChunk, country: classSort, data:res3, chat:res4});// chunks: dataChunk, country: countrySort, data:res3, chat:res4});
             }); 
         },
         postHomePage: function(req, res){

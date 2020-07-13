@@ -55,7 +55,7 @@ module.exports = function(async, Users, Message, aws, formidable, FriendResult){
                 const result1 = results[0];
                // console.log(result1+"in group");
                 const result2 = results[1];
-                res.render('user/profile', {title: 'YouMeChat - Profile', user:req.user, data: result1, chat: result2});
+                res.render('user/profile', {title: 'GOOD SAMARITAN - Profile', user:req.user, data: result1, chat: result2});
                // res.render('groupchat/group', {title: 'Footballkik - Group', user:req.user, groupName:name, data: result1, chat:result2, groupMsg: result3});
             });
            },
@@ -159,7 +159,7 @@ module.exports = function(async, Users, Message, aws, formidable, FriendResult){
                 const result1 = results[0];
                // console.log(result1+"in group");
                 const result2 = results[1];
-                res.render('user/overview', {title: 'YouMeChat - Overview', user:req.user, data: result1, chat: result2});
+                res.render('user/overview', {title: 'GOOD SAMARITAN - Overview', user:req.user, data: result1, chat: result2});
                // res.render('groupchat/group', {title: 'Footballkik - Group', user:req.user, groupName:name, data: result1, chat:result2, groupMsg: result3});
             });
         },

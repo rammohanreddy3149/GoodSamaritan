@@ -17,7 +17,7 @@ module.exports = function(_, passport, User){
         getIndexPage: function(req, res){
             const errors = req.flash('error');
             //if(!req.user){
-                return res.render('index', {title: 'YouMeChat | Login', messages: errors, hasErrors: errors.length > 0});
+                return res.render('index', {title: 'GOOD SAMARITAN | Login', messages: errors, hasErrors: errors.length > 0});
             //}else{
               //  res.redirect('/');
             //}
@@ -31,7 +31,7 @@ module.exports = function(_, passport, User){
         }),
         getSignUp: function(req, res){
             const errors = req.flash('error');
-            return res.render('signup', {title: 'YouMeChat | SignUp', messages: errors, hasErrors: errors.length > 0});
+            return res.render('signup', {title: 'GOOD SAMARITAN | SignUp', messages: errors, hasErrors: errors.length > 0});
         },
 
         postSignUp: passport.authenticate('local.signup', {

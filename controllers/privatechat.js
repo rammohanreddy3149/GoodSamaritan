@@ -63,7 +63,7 @@ module.exports = function(async, Users, Message, FriendResult){
                 //console.log(result3);
                 const params = req.params.name.split('&');
                 const nameParams = params[0];
-                res.render('private/privatechat', {title: 'YouMeChat - Private', user:req.user, data: result1, chat: result2, chats: result3, name:nameParams});
+                res.render('private/privatechat', {title: 'GOOD SAMARITAN - Private', user:req.user, data: result1, chat: result2, chats: result3, name:nameParams});
                });
         },
         chatPostPage: function(req, res, next){

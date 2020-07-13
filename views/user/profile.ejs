@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YouMeChat</title>
+    <title>GOOD SAMARITAN</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -19,92 +19,14 @@
     <%- include ../partials/navbar.ejs %>
     <div class="col-md-12 mob-clearfix margin-80">
         <input type="hidden" id="name-user" value="<%= user.username %>">
-        <input type="hidden" id="issueName" value="<%= issuename%>">   
         <input type="hidden" id="name-image" value="<%= user.userImage %>">   
-        <a href="/group/<%=groupName%>">back</a>
-        <div >
-            <div class="col-md-12">
-                <h1><%=groupName%></h1><br>
-                <h2>Issue:<br><br></h2>
-                <% _.forEach(groupIssue, function(val) { %>
-                    <% if(issue === val.issue.toLowerCase()) { %>
-                    
-                <span class="chat-img1 pull-left">
-                    <img src="http://placehold.it/300x300"  width= 30 height= 30/>
-                </span>
-                <div class="issue-body1">
-                    <span class="issue-name">
-                        <%= val.victim.username %>
-                    </span><br>
-                    <%= val.issue %>
-                </div>
-                <br>
-            </div>
-            <div class="col-sm-5 col-md-6 issue_section">
-                <div class="row">
-                    <div class="new_issue_head">
-                        <div class="pull-left">
-                        <button class="company_name"> Solutions:
-                        </button>
-                        </div>
-                        <div class="pull-right">
-                        </div>
-                    </div>
-
-                    <div class="issue_area">
-                    <ul id ="issues" class="list-unstyled">
-                       
-                        <% _.forEach(val.solveList, function(dat) { %>
-                        <li class="left">
-                            <span class="chat-img1 pull-left">
-                                <!--<img src="/uploads/<%= val.victim.userImage %>" class="img-circle" alt="">-->
-                                <img src="http://placehold.it/300x300"  width= 10 height= 10/>
-                            </span>
-                            <div class="issue-body1">
-                                <span class="issue-name">
-                                    <%= dat.solverId.username %>
-                                </span><br>
-                                <%= dat.solution %>
-                            </div>
-                        </li>
-                        <% })}}) %>
-                    </ul>
-                    <script id="issue-template" type="text/template">
-                        <li class="left">
-                                <span class="chat-img1 pull-left">
-                                    <img src="/uploads/{{userImage}}" class="img-circle" alt="">
-                                </span>
-                                <div class="chat-body1">
-                                    <span class="chat-name">
-                                         {{sender}}
-                                    </span><br>
-                                   {{text}}
-                                </div>
-                            </li>
-                    </script>
-                    </div>
-
-                    <div class="message_write">
-                      <form action="#" id="issue-form" method="post">
-                          <textarea class="form-control" name="issue" id="iss" placeholder="Type issue or solution"></textarea>
-                          <div class="clearfix"></div>
-                          <div class="chat_bottom">
-                              <button id="send-issue" class="pull-right btn btn-primary" style="background: #343a40; border: #343a40;border-radius: 50%; ">
-                                    <span class="glyphicon fa fa-paper-plane nav-glyphicon" style="color: rgb(255, 255, 255);"></span>
-                              </button>
-                          </div>
-                      </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-   <!--     <div class="col-md-12">
+        <div class="col-md-12">
             <div class="chat_container">
                 <div class="row">
+                    <!-- LEFT -->
 
                     <div class="col-sm-4 col-md-3">
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="profile-sidebar">
@@ -147,6 +69,7 @@
                     </div>
 
 
+                    <!--MIDDLE-->
                     <div class="col-sm-5 col-md-6 mob-50">
 
                         <div class="profile-signup">
@@ -154,6 +77,7 @@
                             <form class="form" role="form" method="POST" id="form" action="#">
 
                                 <h3 style="margin-top:0px; color:#343a40 !important">Personal Information</h3>
+                                <h3 style="margin-top:0px; color:#343a40 !important">SAMARITAN COINS:<%= user.samaritan_coins %></h3>
                                 <hr />
                                 <div class="row">
                                         <div class="col-md-12">
@@ -196,7 +120,7 @@
                                     <input type="file" class="form-control" name="upload" id="add-input" style="display: none">
                                     <span id="completed"></span>
                                 </div>
-
+                         
                                 <input type="submit" id="profile" value="SAVE PROFILE" class="btn btn-lg btn-default btn-block save-profile-btn" name="submit" style="background-color:#343a40 !important; color:white !important">
 
                             </form>
@@ -212,7 +136,7 @@
         </div>
 
     </div>
--->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>  
 <script src="/socket.io/socket.io.js"></script>
