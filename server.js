@@ -32,14 +32,16 @@ require('dotenv').config();
 
 container.resolve(function(donor,users, _,admin, home, group,articles, results,listmail,mail,samaritan,maps,privatechat, profile,issues){
     mongoose.Promise = global.Promise;
-    mongoose.connect(process.env.MONGODB_URI);
+    //mongoose.connect('mongodb://localhost/goodsamaritan',{useMongoClient: true});
+    mongoose.connect('mongodb+srv://RamMohanReddy:RamMohanReddy@goodsamaritan.2dc9q.mongodb.net/test');
+    //console.log(process.env.MONGODB_URI);
     const app= SetupExpress();
 
     function SetupExpress(){
         const app = express();
         const server = http.createServer(app);  
         const io = socketIO(server);
-        server.listen(process.env.PORT || 3000,function(){//process.env.PORT || 3000, function(){
+        server.listen(/*process.env.PORT || */3000,function(){//process.env.PORT || 3000, function(){
             console.log('Listening on port 3000');
         });
         ConfigureExpress(app);
@@ -95,7 +97,7 @@ container.resolve(function(donor,users, _,admin, home, group,articles, results,l
         app.use(express.urlencoded({ extended: false }));
         app.use(validator());
         app.use(session({
-            secret: process.env.SECRET_KEY,
+            secret: 'thisisasecretkey',
             resave: true,
             saveUninitialized: true,
             store: new MongoStore({mongooseConnection: mongoose.connection})
